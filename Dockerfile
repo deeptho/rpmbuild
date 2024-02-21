@@ -6,7 +6,10 @@ COPY . .
 
 # Installing tools needed for rpmbuild , 
 # depends on BuildRequires field in specfile, (TODO: take as input & install)
-RUN dnf install -y rpm-build dnf-utils rpmdevtools gcc make coreutils python git
+RUN dnf install -y rpm-build dnf-utils rpmdevtools gcc make coreutils python git  
+RUN dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-39.noarch.rpm 
+RUN dnf install -y https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-39.noarch.rpm
+
 
 # Setting up node to run our JS file
 # Download Node Linux binary
